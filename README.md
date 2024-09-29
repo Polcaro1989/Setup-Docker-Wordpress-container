@@ -1,81 +1,78 @@
+# Desenvolvimento local do WordPress Docker
 
-# WordPress Docker Local Development
+## Introdução
+Bem-vindo ao repositório de desenvolvimento local do WordPress Docker! Esta configuração foi projetada para desenvolvedores que buscam um método simplificado e eficiente para estabelecer um ambiente de desenvolvimento local do WordPress. Utilizando o Docker, esta configuração ignora a necessidade de instalações tradicionais de pilha WAMP ou LAMP, oferecendo um processo de configuração rápido e direto.
 
-## Introduction
-Welcome to the WordPress Docker Local Development repository! This setup is designed for developers seeking a streamlined and efficient method to establish a local WordPress development environment. Utilizing Docker, this configuration bypasses the need for traditional WAMP or LAMP stack installations, offering a rapid and straightforward setup process.
+Nossa configuração Docker-compose mapeia exclusivamente os diretórios de temas e plugins para sua máquina local. Isso permite edição imediata e direta, tornando o ciclo de desenvolvimento significativamente mais rápido e intuitivo.
 
-Our Docker-compose configuration uniquely maps the themes and plugins directories to your local machine. This allows for immediate and direct editing, making the development cycle significantly faster and more intuitive.
+## Pré-requisitos
+Antes de começar, certifique-se de ter o Docker e o Docker-compose instalados em sua máquina. O Docker é uma plataforma para desenvolver, enviar e executar aplicativos dentro de contêineres, e o Docker-compose é uma ferramenta para definir e executar aplicativos Docker de vários contêineres.
 
-## Prerequisites
-Before you begin, ensure you have Docker and Docker-compose installed on your machine. Docker is a platform to develop, ship, and run applications inside containers, and Docker-compose is a tool for defining and running multi-container Docker applications.
+### Para Windows:
+1. **Docker Desktop para Windows:**
+   - Visite o [Docker website](https://www.docker.com/products/docker-desktop) para baixar o Docker Desktop para Windows.
+- Execute o instalador e siga as instruções na tela.
+- O Docker Desktop inclui o Docker-compose, então nenhuma instalação separada é necessária.
 
-### For Windows:
-1. **Docker Desktop for Windows:**
-   - Visit the [Docker website](https://www.docker.com/products/docker-desktop) to download Docker Desktop for Windows.
-   - Run the installer and follow the on-screen instructions.
-   - Docker Desktop includes Docker-compose, so no separate installation is necessary.
+### Para Mac:
+1. **Docker Desktop para Mac:**
+- Navegue até o [Docker website](https://www.docker.com/products/docker-desktop) para baixar o Docker Desktop para Mac.
+- Abra o arquivo `.dmg` baixado e arraste o ícone do Docker para a pasta Applications.
+- Abra o Docker na pasta Applications, e o Docker-compose será incluído na instalação.
 
-### For Mac:
-1. **Docker Desktop for Mac:**
-   - Navigate to the [Docker website](https://www.docker.com/products/docker-desktop) to download Docker Desktop for Mac.
-   - Open the downloaded `.dmg` file and drag the Docker icon to the Applications folder.
-   - Open Docker from the Applications folder, and Docker-compose will be included in the installation.
-
-### For Linux:
+### Para Linux:
 1. **Docker:**
-   - For most Linux distributions, Docker can be installed with a package manager. For example, on Ubuntu, use: `sudo snap install docker`.
+- Para a maioria das distribuições Linux, o Docker pode ser instalado com um gerenciador de pacotes. Por exemplo, no Ubuntu, use: `sudo snap install docker`.
 2. **Docker-compose:**
-   - Install Docker-compose using the package manager. For example, on Ubuntu, use: `sudo apt install docker-compose`.
+- Instale o Docker-compose usando o gerenciador de pacotes. Por exemplo, no Ubuntu, use: `sudo apt install docker-compose`.
 
 ## Setup Instructions
 
-1. **Clone the Repository:**
-   - Open a terminal or command prompt.
-   - Run the following command to clone the repository:
+1. **Clone o Repositório:**
+- Abra um terminal ou prompt de comando.
+- Execute o seguinte comando para clonar o repositório:
      ```
      git clone https://github.com/danmccrady/wordpress-docker-local-development.git
      ```
 
-2. **Navigate to the Repository Directory:**
-   - In the terminal, change to the repository directory with:
+2. **Navegue até o Diretório do Repositório:**
+- No terminal, mude para o diretório do repositório com:
      ```
      cd wordpress-docker-local-development
      ```
 
-3. **Run the Setup Commands:**
-   - Set the necessary file permissions:
+3. **Execute os comandos de configuração:**
+- Defina as permissões de arquivo necessárias:
      ```
      sudo chmod -R 777 *
      ```
-     (This command grants read, write, and execute permissions to all files in the directory.)
-   - Start the Docker containers:
+     (Este comando concede permissões de leitura, gravação e execução para todos os arquivos no diretório.)
+- Inicie os contêineres Docker:
      ```
      docker-compose up -d
      ```
-     (This command runs your Docker containers in detached mode, allowing the terminal to be used for other commands while the containers run in the background.)
+     (Este comando executa seus contêineres Docker em modo desanexado, permitindo que o terminal seja usado para outros comandos enquanto os contêineres são executados em segundo plano.)
 
-4. **Access WordPress:**
-   Once the containers are up and running, access the WordPress setup wizard by navigating to `http://localhost` in your web browser.
+4. **Acesse o WordPress:**
+Quando os contêineres estiverem funcionando, acesse o assistente de configuração do WordPress navegando até `http://localhost` no seu navegador da web.
 
-5. **Complete WordPress Setup:**
-   Follow the on-screen instructions in the WordPress setup wizard to complete the installation.
+5. **Conclua a configuração do WordPress:**
+Siga as instruções na tela no assistente de configuração do WordPress para concluir a instalação.
 
-6. **Post-Setup Instructions:**
-   - To stop the Docker containers, run:
+6. **Instruções pós-configuração:**
+- Para parar os contêineres Docker, execute:
      ```
      docker-compose down
      ```
-   - To view logs of your Docker containers, use:
-     ```
+- Para visualizar os logs dos seus contêineres Docker, use:     ```
      docker-compose logs
      ```
 
-## Working with Themes and Plugins
+## Trabalhando com temas e plugins
 
-Post-setup, you will find the default WordPress themes and plugins installed. This setup allows you to create or modify themes and plugins directly within these folders. Any changes you make will be reflected in real-time on your local development site.
+Após a configuração, você encontrará os temas e plugins padrão do WordPress instalados. Esta configuração permite que você crie ou modifique temas e plugins diretamente dentro dessas pastas. Quaisquer alterações que você fizer serão refletidas em tempo real no seu site de desenvolvimento local.
 
-## Personal Note
-
+## Nota pessoal
 With over a decade of experience in creating WordPress plugins, I've found this Docker-based environment to be my preferred setup. It's efficient, straightforward, and mirrors the production environment closely, making the development process much smoother.
 
 I hope you find this setup as useful as I have. Happy coding!
