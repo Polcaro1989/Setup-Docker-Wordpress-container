@@ -33,8 +33,6 @@ Antes de começar, certifique-se de ter o Docker e o Docker-compose instalados e
 2. **Docker-compose:**
 - Instale o Docker-compose usando o gerenciador de pacotes. Por exemplo, no Ubuntu, use: `sudo apt install docker-compose`.
 
-## Setup Instalação
-
 ## Instalação do ambiente de desenvolvimento
 ### Instalação de algumas dependências
 ```
