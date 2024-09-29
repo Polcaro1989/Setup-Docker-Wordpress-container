@@ -141,7 +141,3 @@ sudo apt-get install composer
 
 Após a configuração, você encontrará os temas e plugins padrão do WordPress instalados. Esta configuração permite que você crie ou modifique temas e plugins diretamente dentro dessas pastas. Quaisquer alterações que você fizer serão refletidas em tempo real no seu site de desenvolvimento local.
 
-## Nota pessoal
-Com mais de uma década de experiência na criação de plugins do WordPress, descobri que esse ambiente baseado em Docker é minha configuração preferida. Ele é eficiente, direto e espelha o ambiente de produção de perto, tornando o processo de desenvolvimento muito mais suave.
-
-Espero que você ache essa configuração tão útil quanto eu. Boa codificação!
