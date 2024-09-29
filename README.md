@@ -5,6 +5,7 @@ O servidor está configurado com muitos complementos, sendo grande parte deles n
 Obs: Esse projeto é bom para personalizar outros projetos web também. 
   
 <img src="https://github.com/abraao69/abraao69/blob/main/Navy%20Blue%20Geometric%20Technology%20LinkedIn%20Banner%20(2).png" alt="Logo">
+<img src="https://tse1.mm.bing.net/th?id=OIP.4PW5fnl8ImR2VRSTIWzz7gHaCm&pid=Api&P=0&h=180" alt="Logo">
 
 ## Introdução
 Bem-vindo ao repositório de desenvolvimento local do WordPress Docker! Esta configuração foi projetada para desenvolvedores que buscam um método simplificado e eficiente para estabelecer um ambiente de desenvolvimento local do WordPress. Utilizando o Docker, esta configuração ignora a necessidade de instalações tradicionais de pilha WAMP ou LAMP, oferecendo um processo de configuração rápido e direto.
