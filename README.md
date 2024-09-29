@@ -28,44 +28,106 @@ Antes de começar, certifique-se de ter o Docker e o Docker-compose instalados e
 
 ## Setup Instalação
 
-1. **Clone o Repositório:**
-- Abra um terminal ou prompt de comando.
-- Execute o seguinte comando para clonar o repositório:
-     ```
-     git clone https://github.com/danmccrady/wordpress-docker-local-development.git
-     ```
+## Instalação do ambiente de desenvolvimento
+### Instalação de algumas dependências
+```
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+```
+  
 
-2. **Navegue até o Diretório do Repositório:**
-- No terminal, mude para o diretório do repositório com:
-     ```
-     cd wordpress-docker-local-development
-     ```
+### 
+### Instalação do Docker
+Para instalação no linux mint segue a url:
+https://linuxiac.com/how-to-install-docker-on-linux-mint-21/
 
-3. **Execute os comandos de configuração:**
-- Defina as permissões de arquivo necessárias:
-     ```
-     sudo chmod -R 777 *
-     ```
-     (Este comando concede permissões de leitura, gravação e execução para todos os arquivos no diretório.)
-- Inicie os contêineres Docker:
-     ```
-     docker-compose up -d
-     ```
-     (Este comando executa seus contêineres Docker em modo desanexado, permitindo que o terminal seja usado para outros comandos enquanto os contêineres são executados em segundo plano.)
+```
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+```
 
-4. **Acesse o WordPress:**
-Quando os contêineres estiverem funcionando, acesse o assistente de configuração do WordPress navegando até `http://localhost` no seu navegador da web.
+```
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+$(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+```
 
-5. **Conclua a configuração do WordPress:**
-Siga as instruções na tela no assistente de configuração do WordPress para concluir a instalação.
+```
+sudo apt-get update
+```
 
-6. **Instruções pós-configuração:**
-- Para parar os contêineres Docker, execute:
-     ```
-     docker-compose down
-     ```
-- Para visualizar os logs dos seus contêineres Docker, use:     ```
-     docker-compose logs
+```
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+```
+
+Depois de instalado e configurado rode o Docker:
+```
+sudo service docker start
+```
+
+Testar se o serviço Docker está rodando corretamente:
+```
+sudo docker run hello-world  
+```
+
+
+##
+### Docker-Compose - Instalação e configuração:
+OBS: EM ALGUNS CASOS PODE ESTAR NO /usr/bin/docker-compose
+```
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+```
+
+```
+sudo chmod +x /usr/local/bin/docker-compose
+```
+
+```
+docker-compose --version  
+```
+  
+##
+### Para usar o Docker sem usar sudo
+https://docs.docker.com/engine/install/linux-postinstall/
+  
+##  
+### Configurar para o fuso horário de São Paulo
+```
+sudo timedatectl set-timezone America/Sao_Paulo
+```
+  
+##
+### Adicionar o repositório do PHP:
+```
+sudo add-apt-repository ppa:ondrej/php
+```
+
+##
+### Instalar os pacotes do PHP instalado. Verificar com php version.
+```
+sudo apt-get install -y php8.2-cli php8.2-common php8.2-pgsql php8.2-zip php8.2-gd php8.2-mbstring php8.2-curl php8.2-xml php8.2-bcmath
+```
+
+##
+### Install Composer
+```
+curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
+```
+
+```
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "if (hash_file('sha384', 'composer-setup.php') === 'dac665fdc30fdd8ec78b38b9800061b4150413ff2e3b6f88543c636f7cd84f6db9189d43a81e5503cda447da73c7e5b6') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+php composer-setup.php
+php -r "unlink('composer-setup.php');"
+```
+
+```
+sudo apt-get install composer
+```
+
+## 
      ```
 
 ## Trabalhando com temas e plugins
@@ -73,6 +135,6 @@ Siga as instruções na tela no assistente de configuração do WordPress para c
 Após a configuração, você encontrará os temas e plugins padrão do WordPress instalados. Esta configuração permite que você crie ou modifique temas e plugins diretamente dentro dessas pastas. Quaisquer alterações que você fizer serão refletidas em tempo real no seu site de desenvolvimento local.
 
 ## Nota pessoal
-With over a decade of experience in creating WordPress plugins, I've found this Docker-based environment to be my preferred setup. It's efficient, straightforward, and mirrors the production environment closely, making the development process much smoother.
+Com mais de uma década de experiência na criação de plugins do WordPress, descobri que esse ambiente baseado em Docker é minha configuração preferida. Ele é eficiente, direto e espelha o ambiente de produção de perto, tornando o processo de desenvolvimento muito mais suave.
 
-I hope you find this setup as useful as I have. Happy coding!
+Espero que você ache essa configuração tão útil quanto eu. Boa codificação!
