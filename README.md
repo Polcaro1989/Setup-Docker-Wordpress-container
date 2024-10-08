@@ -1,4 +1,4 @@
-# Desenvolvimento local do WordPress Docker
+# Desenvolvimento local do WordPress Docker:
 
 
 O servidor está configurado com muitos complementos, sendo grande parte deles necessários para o pleno funcionamento.  
@@ -7,12 +7,12 @@ Obs: Esse projeto é bom para personalizar outros projetos web também.
 <img src="https://github.com/abraao69/abraao69/blob/main/Navy%20Blue%20Geometric%20Technology%20LinkedIn%20Banner%20(2).png" alt="Logo">
 <img src="https://tse1.mm.bing.net/th?id=OIP.4PW5fnl8ImR2VRSTIWzz7gHaCm&pid=Api&P=0&h=180" alt="Logo">
 
-## Introdução
+## Introdução:
 Bem-vindo ao repositório de desenvolvimento local do WordPress Docker! Esta configuração foi projetada para desenvolvedores que buscam um método simplificado e eficiente para estabelecer um ambiente de desenvolvimento local do WordPress. Utilizando o Docker, esta configuração ignora a necessidade de instalações tradicionais de pilha WAMP ou LAMP, oferecendo um processo de configuração rápido e direto.
 
 Nossa configuração Docker-compose mapeia exclusivamente os diretórios de temas e plugins para sua máquina local. Isso permite edição imediata e direta, tornando o ciclo de desenvolvimento significativamente mais rápido e intuitivo.
 
-## Pré-requisitos
+## Pré-requisitos:
 Antes de começar, certifique-se de ter o Docker e o Docker-compose instalados em sua máquina. O Docker é uma plataforma para desenvolver, enviar e executar aplicativos dentro de contêineres, e o Docker-compose é uma ferramenta para definir e executar aplicativos Docker de vários contêineres.
 
 ### Para Windows:
@@ -46,7 +46,7 @@ sudo apt-get install \
   
 
 ### 
-### Instalação do Docker
+### Instalação do Docker:
 Para instalação no linux mint segue a url:
 https://linuxiac.com/how-to-install-docker-on-linux-mint-21/
 
@@ -94,11 +94,11 @@ docker-compose --version
 ```
   
 ##
-### Para usar o Docker sem usar sudo
+### Para usar o Docker sem usar sudo:
 https://docs.docker.com/engine/install/linux-postinstall/
   
 ##  
-### Configurar para o fuso horário de São Paulo
+### Configurar para o fuso horário de São Paulo:
 ```
 sudo timedatectl set-timezone America/Sao_Paulo
 ```
@@ -110,13 +110,13 @@ sudo add-apt-repository ppa:ondrej/php
 ```
 
 ##
-### Instalar os pacotes do PHP instalado. Verificar com php version.
+### Instalar os pacotes do PHP instalado. Verificar com php version:
 ```
 sudo apt-get install -y php8.2-cli php8.2-common php8.2-pgsql php8.2-zip php8.2-gd php8.2-mbstring php8.2-curl php8.2-xml php8.2-bcmath
 ```
 
 ##
-### Install Composer
+### Install Composer:
 ```
 curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
 ```
@@ -135,7 +135,7 @@ sudo apt-get install composer
 ## 
      ```
 
-## Trabalhando com temas e plugins
+## Trabalhando com temas e plugins:
 
 Após a configuração, você encontrará os temas e plugins padrão do WordPress instalados. Esta configuração permite que você crie ou modifique temas e plugins diretamente dentro dessas pastas. Quaisquer alterações que você fizer serão refletidas em tempo real no seu site de desenvolvimento local.
 
